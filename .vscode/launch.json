@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(Debug) C# Active File",
+            "type": "coreclr",  // ou "dotnet" se for uma aplicação .NET Core/.NET 5+
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "preLaunchTask": "build"  // (opcional) se precisar de build antes do debug
+        }
+    ]
+}
