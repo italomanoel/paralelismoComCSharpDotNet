@@ -17,17 +17,41 @@
                    DockPanel.Dock="Bottom"
                    HorizontalAlignment="Right">
         </TextBlock>
-        <Button Name="BtnProcessar"
+		
+		<Grid DockPanel.Dock="Bottom">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<!-- Botões. Valor padrão ao grid é o 1, com isso o primeiro botão não necessita do argumento explícito. -->
+            <Button Name="BtnProcessar"
+                    Padding="10"
+                    Click="BtnProcessar_Click">
+                Fazer Processamento de contas
+            </Button>
+
+			<Button Name="BtnCancelar"
                 Padding="10"
-                DockPanel.Dock="Bottom"
-                Click="BtnProcessar_Click">
-            Fazer Processamento
-        </Button>
+                Grid.Column="2"
+				IsEnabled="False"
+                HorizontalAlignment="Right"
+                Click="BtnCancelar_Click">
+				Cancelar Processamento de contas
+			</Button>
         
+		</Grid>
+		      
         <!-- Resultado -->
         <TextBlock DockPanel.Dock="Top">Resultado:</TextBlock>
         <TextBlock DockPanel.Dock="Top"
                    Name="TxtProgresso"/>
+
+		<!-- Barra de Progresso de resposta ao usuário -->
+		<ProgressBar Name="PgsProgresso"
+                     Minimum="0"
+                     Height="23"
+                     DockPanel.Dock="Bottom"/>
+		
         <ListView Name="LstResultados"
                   Background="Beige"
                   Margin="0 10">
